@@ -9,7 +9,9 @@ import base64
 
 # Set up the page
 st.set_page_config(page_title="home", page_icon=":milky_way:")
+
 st.header("About Me", divider='rainbow')
+
 col1, col2 = st.columns(2)
 
 with col1:
