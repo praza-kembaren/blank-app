@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import streamlit as st
 from astropy.coordinates import SkyCoord
 from datetime import datetime
 import astropy.units as u
@@ -69,4 +70,5 @@ ax.set_ylabel(r'Declination ($^\circ$)', fontsize=12)
 
 # Grid and labels
 ax.grid(True)
-plt.show()
+
+st.pyplot(ax)
