@@ -27,8 +27,7 @@ login_page = st.Page(login, title="Log in", icon=":material/login:")
 logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 
 cdm = st.Page(
-    "AstroPython/Comet Destination Map.py", title="Comet Destination Map", icon=":material/dashboard:", default=True
-)
+    "AstroPython/Comet Destination Map.py", title="Comet Destination Map", icon=":material/dashboard:")
 ci = st.Page("Meteo/Cloud Identification.py", title="Clouds Identification", icon=":material/bug_report:")
 esi = st.Page(
     "Course Work/Earth Similarity Index.py", title="Earth Similarity Index", icon=":material/notification_important:"
@@ -46,7 +45,6 @@ else:
     pg = st.navigation([login_page])
 
 pg.run()
-
 
 
 st.header("About Me", divider='rainbow')
