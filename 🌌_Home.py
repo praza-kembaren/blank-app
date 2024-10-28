@@ -10,43 +10,6 @@ from datetime import datetime
 # Set up the page
 st.set_page_config(page_title="home", page_icon=":milky_way:")
 
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-
-def login():
-    if st.button("Log in"):
-        st.session_state.logged_in = True
-        st.rerun()
-
-def logout():
-    if st.button("Log out"):
-        st.session_state.logged_in = False
-        st.rerun()
-
-login_page = st.Page(login, title="Log in", icon=":material/login:")
-logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
-
-cdm = st.Page(
-    "AstroPython/Comet Destination Map.py", title="Comet Destination Map", icon=":material/dashboard:")
-ci = st.Page("Meteo/Cloud Identification.py", title="Clouds Identification", icon=":material/bug_report:")
-esi = st.Page(
-    "Course Work/Earth Similarity Index.py", title="Earth Similarity Index", icon=":material/notification_important:"
-)
-
-if st.session_state.logged_in:
-    pg = st.navigation(
-        {
-            "AstroPython": [cdm],
-            "Meteo": [ci],
-            "Course Work": [esi],
-        }
-    )
-else:
-    pg = st.navigation([login_page])
-
-pg.run()
-
-
 st.header("About Me", divider='rainbow')
 col1, col2 = st.columns(2)
 
@@ -64,4 +27,37 @@ with col2:
 
     st.markdown(f'<img src="data:image/gif;base64,{data_url}" width="300" height="300" alt="tco gif">',
     unsafe_allow_html=True,)
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+def login():
+    if st.button("Log in"):
+        st.session_state.logged_in = True
+        st.rerun()
+
+def logout():
+    if st.button("Log out"):
+        st.session_state.logged_in = False
+        st.rerun()
+
+login_page = st.Page(login, title="Log in", icon=":material/login:")
+logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
+
+cdm = st.Page("/workspaces/blank-app/AstroPython/Comet Destination Map.py", title="Comet Destination Map", icon=":material/dashboard:", default=True)
+ci  = st.Page("Meteo/Cloud Identification.py", title="Clouds Identification", icon=":material/bug_report:")
+esi = st.Page("Course Work/Earth Similarity Index.py", title="Earth Similarity Index", icon=":material/notification_important:")
+
+if st.session_state.logged_in:
+    pg = st.navigation(
+        {
+            "AstroPython": [cdm],
+            "Meteo": [ci],
+            "Course Work": [esi],
+        }
+    )
+else:
+    pg = st.navigation([login_page])
+
+pg.run()
  
