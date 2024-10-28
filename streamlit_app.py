@@ -10,6 +10,9 @@ from datetime import datetime
 # Set up the page
 st.set_page_config(page_title="home", page_icon=":milky_way:")
 
+st.page_link("streamlit_app.py", label="Home", icon="🏠")
+st.page_link("pages/astropython.py", label="Page 1", icon="1️⃣")
+
 st.header("About Me", divider='rainbow')
 col1, col2 = st.columns(2)
 
@@ -19,10 +22,6 @@ with col1:
     st.subheader("Get in touch on me ", divider='rainbow')
 
     st.markdown("""[LinkedIn](https://www.linkedin.com/in/praza-kembaren) | [GitHub](https://github.com/praza-kembaren) | [Twitter](https://x.com/prazakembaren)""")
-    column1, column2, column3 = st.columns(3)
-    column1.markdown("[![Title]('https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg')]('https://www.linkedin.com/in/praza-kembaren')")
-    column2.markdown("[![Title]('https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png')]('https://github.com/praza-kembaren')")
-    column3.markdown("[![Title]('https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png')]('https://x.com/prazakembaren')")
 
 with col2:
     file_ = open("/workspaces/blank-app/file/ezgif.com-speed.gif", "rb")
